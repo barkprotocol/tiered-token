@@ -1,0 +1,31 @@
+{
+  "name": "tiered-token-example",
+  "version": "0.1.0",
+  "description": "NFT collection deployment on the Solana blockchain using Sugar for NFT management and Umi (Candy Machine) for minting.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "node deploy.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "solana",
+    "nft",
+    "candy-machine",
+    "sugar",
+    "blockchain",
+    "crypto",
+    "bark"
+  ],
+  "author": "BARK Protocol",
+  "license": "MIT",
+  "dependencies": {
+    "@metaplex/js": "^4.12.0",
+    "sugar-cli": "^1.5.2",
+    "umi-cli": "^1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.9.1",
+    "prettier": "^3.3.3"
+  }
+}
