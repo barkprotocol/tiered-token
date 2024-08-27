@@ -1,0 +1,77 @@
+{
+    "name": "TEST NFT 1",
+    "symbol": "TEST",
+    "uri": "https://example.com/metadata/1.json",
+    "seller_fee_basis_points": 500,
+    "creators": [
+      {
+        "address": "your-wallet-address",
+        "share": 1000
+      }
+    ],
+    "attributes": [
+      {
+        "trait_type": "Breed",
+        "value": "French Bulldog x Tasmanian Devil"
+      },
+      {
+        "trait_type": "Role",
+        "value": "Fearless Leader"
+      },
+      {
+        "trait_type": "Appearance",
+        "value": "Flat Cap, Pinstriped Vest, Bow Tie"
+      },
+      {
+        "trait_type": "Color",
+        "value": "Warm Orange and Brown"
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Bold and Determined"
+      }
+    ],
+    "image": "https://example.com/images/test1.png",
+    "description": "Test NFT",
+    "external_url": "https://example.com/test1",
+    "background_color": "#010101"
+  }
+  {
+    "name": "TEST NFT 1",
+    "symbol": "TEST",
+    "uri": "https://example.com/metadata/1.json",
+    "seller_fee_basis_points": 500,
+    "creators": [
+      {
+        "address": "your-wallet-address",
+        "share": 1000
+      }
+    ],
+    "attributes": [
+      {
+        "trait_type": "Breed",
+        "value": "French Bulldog x Tasmanian Devil"
+      },
+      {
+        "trait_type": "Role",
+        "value": "Fearless Leader"
+      },
+      {
+        "trait_type": "Appearance",
+        "value": "Flat Cap, Pinstriped Vest, Bow Tie"
+      },
+      {
+        "trait_type": "Color",
+        "value": "Warm Orange and Brown"
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Bold and Determined"
+      }
+    ],
+    "image": "https://example.com/images/test1.png",
+    "description": "Test NFT 1",
+    "external_url": "https://example.com/test1",
+    "background_color": "#010101"
+  }
+  

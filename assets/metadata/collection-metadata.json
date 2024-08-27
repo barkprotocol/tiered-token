@@ -1,0 +1,38 @@
+{
+  "name": "BARK - The Fearless Leader",
+  "symbol": "UNDOG",
+  "uri": "https://example.com/metadata/0.json",  // This should be the URL where this metadata file can be accessed
+  "seller_fee_basis_points": 500,  // 5% fee
+  "creators": [
+    {
+      "address": "your-wallet-address",  // Replace with actual wallet address
+      "share": 1000  // Total share of creators should be 1000 (100%)
+    }
+  ],
+  "attributes": [
+    {
+      "trait_type": "Breed",
+      "value": "French Bulldog x Tasmanian Devil"
+    },
+    {
+      "trait_type": "Role",
+      "value": "Fearless Leader"
+    },
+    {
+      "trait_type": "Appearance",
+      "value": "Flat Cap, Pinstriped Vest, Bow Tie"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Warm Orange and Brown"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Bold and Determined"
+    }
+  ],
+  "image": "https://example.com/images/bark.png",  // Ensure this URL is correct
+  "description": "BARK is the fearless leader of the Underdogs, embodying a unique blend of courage and charm. Combining the sturdy build of a French Bulldog with the fiery energy of a Tasmanian Devil, BARK sports a sharp pinstriped vest, flat cap, and a bow tie. This distinctive appearance symbolizes BARK's role as a leader and innovator in the Underdogs community.",
+  "external_url": "https://example.com/bark-leader",  // Ensure this URL is correct
+  "background_color": "#010101"  // Background color in hex format
+}

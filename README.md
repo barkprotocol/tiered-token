@@ -17,7 +17,7 @@ Welcome to the BARK NFT project! This repository provides a comprehensive guide 
 
 ## Introduction
 
-This project outlines the steps to deploy and manage NFTs on the Solana blockchain using the Metaplex and Bubblegum libraries. The setup includes creating an NFT collection and minting compressed NFTs directly to or without a collection.
+This project outlines the steps to deploy and manage NFTs on the Solana blockchain using the Metaplex and Bubblegum libraries. The setup includes creating an NFT collection and minting compressed NFTs.
 
 ## Prerequisites
 
@@ -35,32 +35,28 @@ Before you begin, ensure you have the following tools installed and configured:
 The project is organized as follows:
 
 ```
-cnft/
-│
+tiered-token-example/
 ├── assets/
 │   ├── images/
+│   │   ├── bark-test.png
+│   │   └── test-image.png
 │   ├── metadata/
-│
-├── collection/
-│   ├── metadata/
-│   └── images/
-│
+│   │   ├── 0.json
+│   │   ├── 1.json
+│   │   └── test-metadata.json
+│   └── scripts/
+│       └── generateMetadata.ts
+├── keypairs/
+│   └── bark-cnft-keypair.json
+├── src/
+│   └── index.ts
 ├── scripts/
-│   ├── create-collection.js
-│   ├── mint-compressed-nft.js
-│   └── utils.js
-│
-├── config/
-│   ├── umi-config.js
-│   ├── metaplex-config.json
-│   └── candy-machine-config.json
-│
-├── node_modules/
-│
+│   └── generateKeypair.ts
+├── .env
 ├── .gitignore
 ├── package.json
-├── README.md
-└── LICENSE
+├── tsconfig.json
+└── README.md
 ```
 
 ## Setup Instructions
@@ -103,7 +99,7 @@ solana config set --url https://api.devnet.solana.com
 
    Prepare your images and metadata JSON files. Ensure metadata follows the Metaplex format.
 
-   **Example Metadata JSON (`assets/metadata/nft1.json`):**
+   **Example Metadata JSON (`assets/metadata/0.json`):**
 
    ```json
    {
@@ -116,7 +112,14 @@ solana config set --url https://api.devnet.solana.com
          "address": "your-wallet-address",
          "share": 100
        }
-     ]
+     ],
+     "attributes": [
+       { "trait_type": "Trait", "value": "Value" }
+     ],
+     "image": "https://example.com/images/nft1.png",
+     "description": "Description of the NFT.",
+     "external_url": "https://example.com/nft1",
+     "background_color": "#FFFFFF"
    }
    ```
 
@@ -126,46 +129,50 @@ solana config set --url https://api.devnet.solana.com
 
 ## Create an NFT Collection
 
-Use the `scripts/create-collection.js` script to create and configure an NFT collection.
+Use the `scripts/create-collection.ts` script to create and configure an NFT collection.
 
 **Example Usage:**
 
-```javascript
-const createCollection = require('./scripts/create-collection');
-createCollection();
+```sh
+ts-node scripts/create-collection.ts
 ```
 
 ## Mint Compressed NFTs
 
-Use the `scripts/mint-compressed-nft.js` script to mint a compressed NFT, either to a collection or without one.
+Use the `scripts/mint-compressed-nft.ts` script to mint a compressed NFT, either to a collection or without one.
 
 **Example Usage:**
 
-```javascript
-const mintCompressedNFTToCollection = require('./scripts/mint-compressed-nft');
-
-const leafOwner = 'your-leaf-owner-public-key';
-const merkleTree = 'your-merkle-tree-address';
-const collectionMint = 'your-collection-mint-address';
-const metadata = {
-  name: 'My Compressed NFT',
-  uri: 'https://example.com/nft-metadata.json',
-  sellerFeeBasisPoints: 500,
-  creators: [
-    { address: 'your-wallet-address', verified: false, share: 100 },
-  ],
-};
-
-mintCompressedNFTToCollection(leafOwner, merkleTree, collectionMint, metadata);
+```sh
+ts-node scripts/mint-compressed-nft.ts
 ```
+
+Update the script with the required parameters such as `leafOwner`, `merkleTree`, `collectionMint`, and `metadata`.
 
 ## Configuration
 
-Configuration files are located in the `config/` folder:
+Configuration files are located in the root directory:
 
-- **`umi-config.js`**: Contains Umi configuration.
+- **`.env`**: Contains environment variables such as network settings and keypair paths.
+- **`umi-config.ts`**: Contains Umi configuration.
 - **`metaplex-config.json`**: Contains Metaplex configuration.
 - **`candy-machine-config.json`**: Contains Candy Machine configuration.
+
+**Example `.env` File:**
+
+```dotenv
+# Solana Network Configuration
+SOLANA_RPC_URL=https://api.devnet.solana.com
+NETWORK=devnet
+SOLANA_PROGRAM_ID=YOUR_PROGRAM_ID
+
+# Example API URL and secret key (if applicable)
+API_URL=https://api.example.com
+SECRET_KEY=mysecretkey
+
+# Keypair
+KEYPAIR_PATH=keypairs/bark-cnft-keypair.json
+```
 
 ## Additional Tips
 

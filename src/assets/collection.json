@@ -1,0 +1,21 @@
+{
+    "name": "Underdogs NFT Collection",
+    "symbol": "UNDG",
+    "uri": "https://example.com/collection-metadata.json",
+    "seller_fee_basis_points": 500,
+    "creators": [
+      {
+        "address": "YourPublicKeyHere",
+        "verified": true,
+        "share": 100
+      }
+    ],
+    "collection": {
+      "key": "YourCollectionMintAddressHere",
+      "verified": true
+    },
+    "max_supply": 1000,
+    "uri_template": "https://example.com/metadata/{id}",
+    "max_metadata_length": 2048
+  }
+  
